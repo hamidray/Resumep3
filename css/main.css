@@ -18,7 +18,7 @@ body {
 span {
   font-family: Montserrat;
   font-size: 0.5em;
-  color: black;
+  color: #000000;
 }
 
 #header {
@@ -34,7 +34,7 @@ span {
   font-weight: 400;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: orange;
+  color: #ffa500;
   text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
   padding: 10px;
   margin-top: 0px;
@@ -45,7 +45,7 @@ span {
   margin-left: 45px;
   margin-right: 45px;
   font-size: 20px;
-  color: aqua;
+  color: #00ffff;
 }
 
 .contact {
@@ -53,7 +53,7 @@ span {
   margin-left: 30px;
   margin-right: 30px;
   font-size: 23px;
-  color: aqua;
+  color: #00ffff;
 }
 
 .education {
@@ -61,7 +61,7 @@ span {
   margin-left: 30px;
   margin-right: 30px;
   font-size: 20px;
-  color: aqua;
+  color: #00ffff;
 }
 
 .experience {
@@ -69,7 +69,7 @@ span {
   margin-left: 30px;
   margin-right: 30px;
   font-size: 20px;
-  color: aqua;
+  color: #00ffff;
 }
 
 /* drawer menu */
@@ -99,7 +99,7 @@ span {
   height: 60px;
   text-decoration: none;
   font-size: 20px;
-  color: orange;
+  color: #ffa500;
   transition: all .8s;
 }
 
@@ -130,7 +130,7 @@ span {
   display: block;
   width: 40px;
   height: 1px;
-  background: white;
+  background: #ffffff;
   transition: all .5s;
   transform-origin: left top;
 }
@@ -147,7 +147,7 @@ span {
 
 /* Hover Effects */
 .menu-btn:hover .bar {
-  background: orange;
+  background: #ffa500;
 }
 
 .menu-btn:hover .menu-btn__text {
@@ -236,6 +236,9 @@ span {
 }
 
 @media (max-width: 550px) {
+  body {
+    background-color: #2f4f4f;
+  }
   .photo {
     width: 300px;
     height: 300px;
@@ -246,14 +249,14 @@ span {
     font-weight: 400;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    color: orange;
+    color: #ffa500;
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
     padding: 10px;
     margin-top: 0px;
   }
   .about {
     margin-top: 80px;
-    margin-left: 35px;
+    margin-left: 30px;
   }
   .education {
     margin-top: 80px;
@@ -285,7 +288,7 @@ span {
   transition: all 0.4s ease-out;
   box-shadow: 0px 35px 77px -17px rgba(0, 0, 0, 0.44);
   overflow: hidden;
-  color: blueviolet;
+  color: #6456b7;
   font-family: 'Roboto';
 }
 
@@ -399,7 +402,7 @@ span {
     display: block;
     width: 40px;
     height: 1px;
-    background: white;
+    background: #ffffff;
     transition: all .5s;
     transform-origin: left top;
   }
