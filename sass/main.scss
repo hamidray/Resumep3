@@ -4,7 +4,7 @@ $aqua:#00ffff;
 $dgray:#222;
 $bk:#000000;
 $blue:#0000ff;
-$orng:#ffa500;
+$orng:#ffd11f;
 $lgray:#999;
 $dsg:#2f4f4f;
 $bhex:#1E1E1E;
@@ -32,57 +32,58 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 }
+/////////////mixin pages//////////////
+
+@mixin pages ($marginT, $marginL, $marginR, $fontS, $color:$aqua,)
+  {
+    margin-top: $marginT;
+    margin-left:$marginL;
+    margin-right:$marginR;
+    font-size: $fontS;
+    color: $aqua;
+  }
+
+.about {
+ @include pages(90px, 30px, 45px, 20px, ) 
+}
+.contact {
+ @include pages(70px, 30px, 30px, 23px,)
+}
+.education {
+  @include pages(90px, 30px, 30px,20px,)
+}
+.experience {
+@include pages(90px, 30px, 30px,20px,)
+}
+
+/////////////mixin Logo Head//////////////
+ 
+@mixin Logohead ( $posn, $z-in, $wit, $fonts, $fontf, $fontw, $letterspc, $text-t, $color, $textsh, $padg, $margint, $marginL, ){
+  position: $posn;
+  z-index: $z-in;
+  width: $wit;
+  font-size: $fonts;
+  font-family: $fontf;
+  font-weight: $fontw;
+  letter-spacing: $letterspc;
+  text-transform: $text-t;
+  color:$color;
+  text-shadow: $textsh;
+  padding: $padg;
+  margin-top: $margint;
+  margin-left:$marginL;
+}
+#header {
+  @include Logohead (absolute, 10, 100%, 18px, Orbitron, 400, 0.02em, uppercase, $orng, 0px 1px 1px rgba(0, 0, 0, 0.3), 0px, -5px, 10px,);
+}
+
+////////* drawer menu *///////////
+
 span {
   font-family: Montserrat;
   font-size: 0.5em;
   color:$bk;
 }
-#header {
-  position: absolute;
-  z-index: 10;
-  width: 100%;
-  margin-top: px;
-}
-#header h1 {
-   font-size: 40px;
-  font-family: Orbitron;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color:$orng;
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
-  padding: 10px;
-  margin-top: 0px;
-}
-.about {
-  margin-top: 160px;
-  margin-left:45px;
-  margin-right:45px;
-  font-size: 20px;
-  color:$aqua;
-} 
-.contact {
-  margin-top: 70px;
-  margin-left:30px;
-  margin-right:30px;
-  font-size: 23px;
-  color:$aqua;
-}
-.education {
-  margin-top: 150px;
-  margin-left:30px;
-  margin-right:30px;
-  font-size: 20px;
-  color:$aqua;
-}
-.experience {
-  margin-top: 180px;
-  margin-left:30px;
-  margin-right:30px;
-  font-size: 20px;
-  color:$aqua;
-}
-/* drawer menu */
 .drawer-menu {
   box-sizing: border-box;
   position: fixed;
@@ -106,15 +107,18 @@ span {
   display: block;
   height: 60px;
   text-decoration:none;
-  font-size: 20px;
+  font-size: 12px;
   color: $orng;
   transition: all .8s;
 }
 /* checkbox */
+
 .check {
   display: none;
 }
-/* menu button - label tag */
+
+//////* menu button - label tag */////
+
 .menu-btn {
   position: fixed;
   display: block;
@@ -140,8 +144,8 @@ span {
   transform-origin: left top;
 }
 .bar.middle {
-  top: 12px;
-  opacity: 1;
+      top: 12px;
+      opacity: 1;
 }
 .bar.bottom {
   top: 24px;
@@ -202,6 +206,9 @@ span {
   opacity: 1;
   z-index: 3;
 }
+
+////////!!!! Home Page Style!!!!///////
+
 .photo {
   width: 400px;
   height: 400px;
@@ -226,39 +233,10 @@ span {
     background-position: -396px center;
   }
 }
-@media (max-width: 550px) {
-   body{
-     background-color: $dsg;
-   }
-  .photo {
-    width: 300px;
-    height: 300px;
-  
-}  
-  #header h1 {
-   font-size: 30px;
-  font-family: Orbitron;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: $orng;
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
-  padding: 10px;
-  margin-top: 0px;
-}
-.about {
-  margin-top: 80px;
-  margin-left:30px;
-} 
-.education {
-  margin-top: 80px;
-  margin-left:30px;
-}
-.experience {
-  margin-top: 90px;
-  margin-left:30px;
-}
-}
+//////!!! media query!!!!////////
+
+
+//////!!!!! Portfolio style/////
 .wrap
 {
   margin:50px auto 0 auto;
@@ -295,14 +273,13 @@ span {
 }
 .tile .text
 {
-
   position:absolute;
   padding:30px;
   height:calc(100% - 60px);
 }
 .tile h1
 {
-   font-weight:300;
+  font-weight:300;
   margin:0;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
 }
@@ -311,7 +288,7 @@ span {
   font-weight:100;
   margin:20px 0 0 0;
   font-style:italic;
-   transform: translateX(200px);
+  transform: translateX(200px);
 }
 .tile p
 {
@@ -353,7 +330,6 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
   flex-direction:column;
   align-items:center;
   justify-content:space-around;
-  
 }
 .dots span
 {
@@ -383,6 +359,9 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
 {
    transition-delay: 0.15s;
 }
+
+/////!!! media query!!!!////////
+
 @media (max-width: 1000px) {
   .wrap {
    flex-direction: column;
@@ -393,10 +372,35 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
     top: 0;
     left: 0;
     display: block;
-    width: 40px;
+    width: 30px;
     height: 1px;
     background: $wt;
     transition: all .5s;
     transform-origin: left top;
   }
-}
+    body{
+     background-color: $dsg;
+  }
+   .photo {
+     width: 300px;
+     height: 300px;
+     margin:auto;
+  }  
+    #header  {
+    font-size: 15px;
+    margin-left:5px;
+  }
+  .about {
+   margin-top: 80px;
+   margin-left:30px;
+  } 
+  .education {
+   margin-top: 80px;
+   margin-left:30px;
+  }
+  .experience {
+   margin-top: 90px;
+   margin-left:30px;
+  }
+  }
+
