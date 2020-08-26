@@ -2,14 +2,13 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Orbitron");
 html, body {
   height: 100%;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
 }
 
 body {
   width: 100%;
   display: flex;
-  background: #222;
+  background: #2f4f4f;
   background-size: cover;
   overflow-x: hidden;
   overflow-y: auto;
@@ -51,15 +50,29 @@ body {
   position: absolute;
   z-index: 10;
   width: 100%;
-  font-size: 18px;
+  font-size: 15px;
   font-family: Orbitron;
   font-weight: 400;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #ffd11f;
-  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.3);
-  padding: 0px;
-  margin-top: -5px;
+  text-shadow: 0px 0px 0px #010101;
+  padding: 1px;
+  margin-top: 0px;
+  margin-left: auto;
+}
+
+#navBar {
+  position: fixed;
+  margin: 0;
+  width: 100%;
+  height: 80px;
+  background: #2D2D2D;
+  box-shadow: 0px 0px 10px #2d2d2d;
+  z-index: 9999;
+}
+
+#header h1 {
   margin-left: 10px;
 }
 
@@ -362,7 +375,7 @@ span {
     top: 0;
     left: 0;
     display: block;
-    width: 30px;
+    width: 40px;
     height: 1px;
     background: #ffffff;
     transition: all .5s;
@@ -378,7 +391,10 @@ span {
   }
   #header {
     font-size: 15px;
-    margin-left: 5px;
+    margin: auto;
+  }
+  #header h1 {
+    margin-left: 10px;
   }
   .about {
     margin-top: 80px;
@@ -391,6 +407,12 @@ span {
   .experience {
     margin-top: 90px;
     margin-left: 30px;
+  }
+  #navBar {
+    position: fixed;
+    margin: 0;
+    width: 100%;
+    height: 80px;
   }
 }
 /*# sourceMappingURL=main.css.map */
