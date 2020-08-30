@@ -240,15 +240,14 @@ span {
 }
 
 //////!!!!! Portfolio style/////
-.wrap
-{
+.wrap {
   margin:50px auto 0 auto;
   width:100%;
   display:flex;
   align-items:space-around;
   max-width:1200px;
 }
-.tile{
+.tile {
   width:380px;
   height:380px;
   margin:10px;
@@ -264,8 +263,7 @@ span {
   font-family:'Roboto';
 }
 
-.tile img
-{
+.tile img {
   height:100%;
   width:100%;
   position:absolute;
@@ -278,35 +276,30 @@ span {
   -o-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
 }
-.tile .text
-{
+.tile .text {
   position:absolute;
   padding:30px;
   height:calc(100% - 60px);
 }
-.tile h1
-{
+.tile h1 {
   font-weight:300;
   margin:0;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
 }
-.tile h2
-{
+.tile h2 {
   font-weight:100;
   margin:20px 0 0 0;
   font-style:italic;
  transform: translateX(200px);
 }
-.tile p
-{
+.tile p {
   font-weight:300;
   margin:20px 0 0 0;
   line-height: 25px;
   transform: translateX(-200px);
   transition-delay: 0.2s;
 }
-.animate-text
-{
+.animate-text {
   opacity:0;
   -webkit-transition: all 0.6s ease-in-out;
   -moz-transition: all 0.6s ease-in-out;
@@ -314,17 +307,14 @@ span {
   -o-transition: all 0.6s ease-in-out;
   transition: all 0.6s ease-in-out;
 }
-.tile:hover
-{
+.tile:hover {
 box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
   transform:scale(1.05);
 }
-.tile:hover img
-{
+.tile:hover img {
   opacity: 0.2;
 }
-.tile:hover .animate-text
-{
+.tile:hover .animate-text {
   -webkit-transform:translateX(0);
   -moz-transform:translateX(0);
   -ms-transform:translateX(0);
@@ -332,8 +322,7 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
   transform:translateX(0);
   opacity:1;
 }
-.dots
-{
+.dots {
   position:absolute;
   bottom:20px;
   right:30px;
@@ -346,8 +335,7 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
   align-items:center;
   justify-content:space-around;
 }
-.dots span
-{
+.dots span {
   width: 5px;
   height:5px;
   background-color: currentColor;
@@ -357,8 +345,7 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
   transform: 0.4s ease-out, opacity 0.5s ease;
   transform: translateY(30px);
 }
-.tile:hover span
-{
+.tile:hover span {
   opacity:1;
   transform: translateY(0px);
 }
