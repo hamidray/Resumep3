@@ -15,7 +15,7 @@ body {
 }
 
 .index {
-  margin-top: 100px;
+  margin-top: 85px;
   margin-left: 30px;
   margin-right: 30px;
   font-size: 20px;
@@ -348,9 +348,6 @@ span {
     width: 300px;
     height: 300px;
     margin: auto;
-  }
-  .index {
-    margin-top: 90px;
   }
 }
 /*# sourceMappingURL=main.css.map */
