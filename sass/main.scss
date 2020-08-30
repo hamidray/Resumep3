@@ -22,7 +22,6 @@ $wt:#ffffff;
 html, body {
   height: 100%;
   margin: 0;
-  
 }
 body {
   width: 100%;
@@ -43,40 +42,27 @@ body {
     color: $aqua;
   }
 
-.about {
- @include pages(90px, 30px, 45px, 20px, ) 
-}
-.contact {
- @include pages(70px, 30px, 30px, 23px,)
-}
-.education {
-  @include pages(90px, 30px, 30px,20px,)
-}
-.experience {
-@include pages(90px, 30px, 30px,20px,)
-}
+.index {
+ @include pages(100px, 30px, 30px, 20px, ) 
+ }
 
-/////////////mixin Logo Head//////////////
+///////////// Logo Head//////////////
  
-@mixin Logohead ( $posn, $z-in, $wit, $fonts, $fontf, $fontw, $letterspc, $text-t, $color, $textsh, $padg, $margint, $marginL, ){
-  position: $posn;
-  z-index: $z-in;
-  width: $wit;
-  font-size: $fonts;
-  font-family: $fontf;
-  font-weight: $fontw;
-  letter-spacing: $letterspc;
-  text-transform: $text-t;
-  color:$color;
-  text-shadow: $textsh;
-  padding: $padg;
-  margin-top: $margint;
-  margin-left:$marginL;
+.header {
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  font-size: 15px;
+  font-family: Orbitron;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #ffd11f;
+  text-shadow: 0px 0px 0px #010101;
+  padding: 1px;
+  margin-top: 0px;
 }
-#header {
-  @include Logohead (absolute, 10, 100%, 15px, Orbitron, 400, 0.02em, uppercase, $orng, 0px 0px 0px rgba(1, 1, 1, 1.3), 1px, 0px, auto,);
-}
-#navBar {
+.navBar {
   position: fixed;
   margin: 0;
   width: 100%;
@@ -85,7 +71,7 @@ body {
   box-shadow: 0px 0px 10px #2d2d2d;
   z-index: 9999;
 }
-#header h1{
+.header h1{
   margin-left: 10px;
 }
 ////////* drawer menu *///////////
@@ -114,14 +100,15 @@ span {
   text-align: center;
   list-style:none;
 }
-.drawer-menu li a {
-  display: block;
-  height: 60px;
-  text-decoration:none;
-  font-size: 12px;
-  color: $orng;
+ .drawer-menu li a {
+   display: block;
+   height: 60px;
+   text-decoration:none;
+   font-size: 12px;
+   color: $orng;
   transition: all .8s;
 }
+         
 /* checkbox */
 
 .check {
@@ -151,12 +138,16 @@ span {
   width: 40px;
   height: 1px;
   background: $wt;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
   transition: all .5s;
   transform-origin: left top;
 }
 .bar.middle {
-      top: 12px;
-      opacity: 1;
+  top: 12px;
+  opacity: 1;
 }
 .bar.bottom {
   top: 24px;
@@ -177,6 +168,10 @@ span {
   height: 100vh;
   background: rgba(0, 0, 0, 0);
   transition-property: all;
+  -webkit-transition-duration: .3s;
+  -moz-transition-duration: .3s;
+  -ms-transition-duration: .3s;
+  -o-transition-duration: .3s;
   transition-duration: .3s;
   transition-delay: 0s;
   visibility: hidden;
@@ -192,7 +187,7 @@ span {
 .check:checked ~ .contents {
   transition-delay: 0s;
   transform: translateX(-300px);
-}
+}    
 .check:checked ~ .menu-btn .menu-btn__text {
   visibility: hidden;
   opacity: 0;
@@ -220,7 +215,7 @@ span {
 
 ////////!!!! Home Page Style!!!!///////
 
-.photo {
+.image {
   width: 400px;
   height: 400px;
   background-image: url("http://image.dek-d.com/27/0391/4869/119477071");
@@ -232,20 +227,17 @@ span {
   bottom: 0;
   left: 0;
   margin:auto;
-  box-shadow: -30px -20px 0 0 rgba(0, 0, 0, 0.15) inset, -70px -30px 0 0 rgba(0, 0, 0, 0.1) inset, 5px 5px 0 0 rgba(255, 255, 255, 0.2) inset;
-  animation: rotationphoto 5s infinite linear;
-}
+  animation: rotationimage 5s infinite linear;
+ }
 
-@keyframes rotationphoto {
-  from {
-    background-position: left center;
+@keyframes rotationimage {
+     from {
+        background-position: left center;
   }
-  to {
-    background-position: -396px center;
-  }
+     to {
+       background-position: -396px center;
+   }
 }
-//////!!! media query!!!!////////
-
 
 //////!!!!! Portfolio style/////
 .wrap
@@ -256,8 +248,7 @@ span {
   align-items:space-around;
   max-width:1200px;
 }
-.tile
-{
+.tile{
   width:380px;
   height:380px;
   margin:10px;
@@ -271,7 +262,8 @@ span {
   overflow:hidden;
   color: $bluevlet;
   font-family:'Roboto';
- }
+}
+
 .tile img
 {
   height:100%;
@@ -280,6 +272,10 @@ span {
   top:0;
   left:0;
   z-index:0;
+  -webkit-transition: all 0.4s ease-out;
+  -moz-transition: all 0.4s ease-out;
+  -ms-transition: all 0.4s ease-out;
+  -o-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
 }
 .tile .text
@@ -299,7 +295,7 @@ span {
   font-weight:100;
   margin:20px 0 0 0;
   font-style:italic;
-  transform: translateX(200px);
+ transform: translateX(200px);
 }
 .tile p
 {
@@ -312,6 +308,10 @@ span {
 .animate-text
 {
   opacity:0;
+  -webkit-transition: all 0.6s ease-in-out;
+  -moz-transition: all 0.6s ease-in-out;
+  -ms-transition: all 0.6s ease-in-out;
+  -o-transition: all 0.6s ease-in-out;
   transition: all 0.6s ease-in-out;
 }
 .tile:hover
@@ -325,6 +325,10 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
 }
 .tile:hover .animate-text
 {
+  -webkit-transform:translateX(0);
+  -moz-transform:translateX(0);
+  -ms-transform:translateX(0);
+  -o-transform:translateX(0);
   transform:translateX(0);
   opacity:1;
 }
@@ -350,25 +354,29 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
   border-radius: 50%;
   display:block;
   opacity:0;
-  transition: transform 0.4s ease-out, opacity 0.5s ease;
+  transform: 0.4s ease-out, opacity 0.5s ease;
   transform: translateY(30px);
 }
 .tile:hover span
 {
   opacity:1;
-  transform:translateY(0px);
+  transform: translateY(0px);
 }
+ @mixin dotchild ($trsdlay){
+  
+  transition-delay:$trsdlay;
+ }
 .dots span:nth-child(1)
 {
-   transition-delay: 0.05s;
+   transition : 0.05s;
 }
 .dots span:nth-child(2)
 {
-   transition-delay: 0.1s;
+  @include dotchild(0.1s)
 }
 .dots span:nth-child(3)
 {
-   transition-delay: 0.15s;
+  @include dotchild(0.15)
 }
 
 /////!!! media query!!!!////////
@@ -377,50 +385,14 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
   .wrap {
    flex-direction: column;
     width:400px;
-  }
-  .bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 40px;
-    height: 1px;
-    background: $wt;
-    transition: all .5s;
-    transform-origin: left top;
-  }
-    body{
-     background-color: $dsg;
-  }
-   .photo {
+    }
+    .image {
      width: 300px;
      height: 300px;
-     margin:auto;
+     margin: auto;
   }  
-    #header  {
-    font-size: 15px;
-    margin:auto;
+  .index{
+    margin-top:90px;
   }
-  #header h1{
-    margin-left:10px;
-  }
-  .about {
-   margin-top: 80px;
-   margin-left:30px;
-  } 
-  .education {
-   margin-top: 80px;
-   margin-left:30px;
-  }
-  .experience {
-   margin-top: 90px;
-   margin-left:30px;
-  }
-  #navBar {
-    position: fixed;
-    margin: 0;
-    width: 100%;
-    height: 80px;
-  
-  }
+    
 }
