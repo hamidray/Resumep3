@@ -1,4 +1,4 @@
- ///!!! color variable!!!!////
+ //////////////////////////color variable!!////////////////////////////////////////
 
 $aqua:#00ffff;
 $dgray:#222;
@@ -11,13 +11,14 @@ $bhex:#1E1E1E;
 $cyn:#99aeff;
 $bluevlet:#6456b7;
 $wt:#ffffff;
+$pbk:#FF79DA;
 
-///!!! @ import URL!!!!//////////////
+///////////////////////////@ import Font URL!!/////////////////////////////////////
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Orbitron");
 
-///////!!! Body Style!!!!//////
+/////////////////////////// Body Style////////////////////////////////////////////
 
 html, body {
   height: 100%;
@@ -31,7 +32,8 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
 }
-/////////////mixin pages//////////////
+
+///////////////////////////////mixin pages///////////////////////////////////////
 
 @mixin pages ($marginT, $marginL, $marginR, $fontS, $color:$aqua,)
   {
@@ -41,28 +43,62 @@ body {
     font-size: $fontS;
     color: $aqua;
   }
+  .index {
+    @include pages(85px, 30px, 30px, 20px, ) 
+    }
 
-.index {
- @include pages(85px, 30px, 30px, 20px, ) 
- }
+///////////////////////Profile in Home Page///////////////////////////////////
 
-///////////// Logo Head//////////////
- 
-.header {
-  position: absolute;
-  z-index: 10;
-  width: 100%;
-  font-size: 15px;
-  font-family: Orbitron;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: #ffd11f;
-  text-shadow: 0px 0px 0px #010101;
-  padding: 1px;
-  margin-top: 0px;
+ .profile {
+	background:$lgray;
+	float: left;
+	margin: 2px;
+  width: 300px;
+  height:570px;
+  margin-top:60px;
+  text-align: justify;
+  	&__header,
+	  &__content,
+   	&__footer a {
+       padding: 10px 15px;
+       text-decoration: none;
+       color:$pbk;
+          &:hover a{
+             background-color: $wt;
+       }
 }
-.navBar {
+       	&__title {
+     	    	color:$orng;
+           margin-bottom: 0;
+           font-size:12px;
+           margin-left:10px;
+           font-family: Orbitron
+}
+       	&__content{
+           color: $aqua;
+           margin-top:30px;
+    }
+}
+///////////////////////////// Navbar Logo Head/////////////////////////////////////
+
+.header  {
+      position: absolute;
+      z-index: 10;
+      width: 100%;
+      font-size: 15px;
+      font-family: Orbitron;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #ffd11f;
+      padding:0px;
+      margin-top: 0px;
+      h1{
+        margin-left:20px;
+    }
+}
+
+.navbar {
   position: fixed;
   margin: 0;
   width: 100%;
@@ -70,52 +106,54 @@ body {
   background: #2D2D2D;
   box-shadow: 0px 0px 10px #2d2d2d;
   z-index: 9999;
+ 
 }
-.header h1{
-  margin-left: 10px;
-}
-////////* drawer menu *///////////
+///////////////////////////////* drawer menu */////////////////////////////////////
 
 span {
   font-family: Montserrat;
   font-size: 0.5em;
   color:$bk;
 }
-.drawer-menu {
-  box-sizing: border-box;
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 300px;
-  height: 100%;
-  padding: 120px 0;
-  background:$dgray;
-  transition-delay: 0s;
-  transform-origin: right center;
-  transform: perspective(500px) rotateY(-90deg);
-  opacity: 0;
-  box-shadow: 0px 0px 5px $bhex;
-}
-.drawer-menu li {
-  text-align: center;
-  list-style:none;
-}
- .drawer-menu li a {
-   display: block;
-   height: 60px;
-   text-decoration:none;
-   font-size: 12px;
-   color: $orng;
-  transition: all .8s;
-}
-         
+ .drawer-menu {
+   box-sizing: border-box;
+   position: fixed;
+   top: 0;
+   right: 0;
+   width: 300px;
+   height: 100%;
+   padding: 120px 0;
+   background:$dgray;
+   transition-delay: 0s;
+   transform-origin: right center;
+   transform: perspective(500px) rotateY(-90deg);
+   opacity: 0;
+   box-shadow: 0px 0px 5px $bhex;
+       li {
+          text-align: center;
+          list-style:none;
+             a {
+              display: block;
+              margin-bottom: 40px;
+              text-decoration:none;
+              font-size: 12px;
+              color: $orng;
+              transition: all .8s;
+                 &:hover {
+                    background: $dsg;
+                   
+              }
+         }
+     }
+}   
+
 /* checkbox */
 
 .check {
   display: none;
 }
 
-//////* menu button - label tag */////
+///////////////////////* menu button - label tag *////////////////////////////////
 
 .menu-btn {
   position: fixed;
@@ -129,6 +167,7 @@ span {
   text-align: center;
   cursor: pointer;
   z-index: 3;
+  
 }
 .bar {
   position: absolute;
@@ -213,39 +252,41 @@ span {
   z-index: 3;
 }
 
-////////!!!! Home Page Style!!!!///////
+///////////////////////////// Home Page Style//////////////////////////////////////
 
 .image {
   width: 400px;
   height: 400px;
-  background-image: url("http://image.dek-d.com/27/0391/4869/119477071");
-  background-size: cover;
-  border-radius: 50%;
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/29/11/34/america-1869214_960_720.jpg");
+  background-size:cover ;
+  border-radius: 100%;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   margin:auto;
+  border:20px $lgray solid;
   animation: rotationimage 5s infinite linear;
- }
-
+}
+ 
 @keyframes rotationimage {
      from {
         background-position: left center;
   }
      to {
-       background-position: -396px center;
+       background-position: -392px center;
    }
 }
 
-//////!!!!! Portfolio style/////
+/////////////////////////// Portfolio style////////////////////////////////////////
+
 .wrap {
   margin:50px auto 0 auto;
   width:100%;
   display:flex;
   align-items:space-around;
-  max-width:1200px;
+  max-width:1100px;
 }
 .tile {
   width:380px;
@@ -261,7 +302,7 @@ span {
   overflow:hidden;
   color: $bluevlet;
   font-family:'Roboto';
-}
+ }
 
 .tile img {
   height:100%;
@@ -275,45 +316,51 @@ span {
   -ms-transition: all 0.4s ease-out;
   -o-transition: all 0.4s ease-out;
   transition: all 0.4s ease-out;
-}
-.tile .text {
+  }
+
+ .tile:hover img {
+    opacity: 0.2;
+  }
+
+ .tile .text {
   position:absolute;
   padding:30px;
   height:calc(100% - 60px);
 }
+
 .tile h1 {
   font-weight:300;
   margin:0;
   text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+  color:$blue
 }
+
 .tile h2 {
   font-weight:100;
   margin:20px 0 0 0;
   font-style:italic;
- transform: translateX(200px);
+  transform: translateX(200px);
+  color:$bhex;
 }
+
 .tile p {
   font-weight:300;
   margin:20px 0 0 0;
   line-height: 25px;
   transform: translateX(-200px);
   transition-delay: 0.2s;
+  color:$bk;
 }
+
 .animate-text {
   opacity:0;
   -webkit-transition: all 0.6s ease-in-out;
   -moz-transition: all 0.6s ease-in-out;
   -ms-transition: all 0.6s ease-in-out;
   -o-transition: all 0.6s ease-in-out;
-  transition: all 0.6s ease-in-out;
+   transition: all 0.6s ease-in-out;
 }
-.tile:hover {
-box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
-  transform:scale(1.05);
-}
-.tile:hover img {
-  opacity: 0.2;
-}
+
 .tile:hover .animate-text {
   -webkit-transform:translateX(0);
   -moz-transform:translateX(0);
@@ -322,60 +369,98 @@ box-shadow: 0px 35px 77px -17px rgba(0,0,0,0.64);
   transform:translateX(0);
   opacity:1;
 }
-.dots {
-  position:absolute;
-  bottom:20px;
-  right:30px;
-  margin: 0 auto;
-  width:30px;
-  height:30px;
-  color:currentColor;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:space-around;
-}
-.dots span {
-  width: 5px;
-  height:5px;
-  background-color: currentColor;
-  border-radius: 50%;
-  display:block;
-  opacity:0;
-  transform: 0.4s ease-out, opacity 0.5s ease;
-  transform: translateY(30px);
-}
-.tile:hover span {
-  opacity:1;
-  transform: translateY(0px);
-}
- @mixin dotchild ($trsdlay){
-  
-  transition-delay:$trsdlay;
- }
-.dots span:nth-child(1)
-{
-   transition : 0.05s;
-}
-.dots span:nth-child(2)
-{
-  @include dotchild(0.1s)
-}
-.dots span:nth-child(3)
-{
-  @include dotchild(0.15)
-}
 
-/////!!! media query!!!!////////
+////////////////////////// Mobile First Style /////////////////////////////////////
 
-@media (max-width: 1000px) {
+@media  all and  (min-width: 200px)  {
+  body{
+    background-color: $bk;
+  }
   .wrap {
    flex-direction: column;
     width:400px;
+  }
+    .image {
+     width: 150px;
+     height: 150px;
+     margin-top:100px;
+  }  
+  .profile {
+    background:$bhex;
+    float: center;
+    font-size:17px;
+    width:700px;
+    margin-top:300px;
+    height:60px;
+}
+ .profile__title{
+  text-align: center;
+}
+ .header h1{
+  text-align: center;
+ }
+}
+ ///////////////////////////// Tablet Style /////////////////////////////////////
+
+ @media screen and (min-width: 700px) {
+  body{
+    background-color: $bhex;
+  }
+  .wrap {
+   flex-direction: column;
+    width:400px;
+    margin-top:80px;
     }
+    .image {
+      width: 170px;
+      height: 170px;
+      margin-top:85px;
+   }  
+   .profile {
+    background:$dsg;
+    float: center;
+    font-size:17px;
+    width:100%;
+    margin-top:300px;
+    height:60px;
+}
+    .profile__title{
+      text-align: center;
+    }
+    .header h1{
+      text-align:center;
+   }
+}
+
+ ///////////////////////// @ desktop Style ///////////////////////////////////////
+
+ @media screen and (min-width: 1100px) {
+  body{
+      background-color: $dsg;
+}
+  .wrap {
+     flex-direction: row;
+     width:900px;
+     margin:auto;
+}
     .image {
      width: 300px;
      height: 300px;
      margin: auto;
-  }  
- }
+}
+   .profile {
+    background:$bhex;
+    float: left;
+    margin: 1px;
+    width: 220px;
+    height:875px;
+    margin-top:70px;
+    font-size:15px;
+}
+  .header h1{
+    text-align: left;
+   }
+   
+}  
+
+ 
