@@ -25,7 +25,7 @@ body {
 .index__footer a {
   color: #FF79DA;
   text-decoration: none;
-  padding: 10px 15p;
+  padding: 10px 15px;
 }
 
 .index__footer a:hover {
@@ -277,7 +277,7 @@ span {
 .wrap__footer a {
   color: #FF79DA;
   text-decoration: none;
-  padding: 10px 15p;
+  padding: 10px 15px;
 }
 
 .wrap__footer a:hover {
@@ -285,8 +285,8 @@ span {
 }
 
 .tile {
-  width: 380px;
-  height: 380px;
+  width: 300px;
+  height: 300px;
   margin: 10px;
   background-color: #99aeff;
   display: inline-block;
@@ -301,8 +301,6 @@ span {
 }
 
 .tile img {
-  height: 100%;
-  width: 100%;
   position: absolute;
   top: 0;
   left: 0;

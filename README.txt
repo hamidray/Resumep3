@@ -10,7 +10,7 @@ index.html
 aboutme.html
 portfolio.html
 education.html
-experinces.html
+experiences.html
 contact.html
 
 Style:
